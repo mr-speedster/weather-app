@@ -11,8 +11,7 @@
     <title>Weather</title>
   </head>
   <body>
-    <h1>Weather</h1>
-
+    <input id="txtPlaces" type="text" placeholder="enter the place">
     <!-- Optional JavaScript; choose one of the two! -->
 
     <!-- Option 1: Bootstrap Bundle with Popper -->
@@ -23,5 +22,13 @@
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js" integrity="sha384-W8fXfP3gkOKtndU4JGtKDvXbO53Wy8SZCQHczT5FMiiqmQfUpWbYdTil/SxwZgAN" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.min.js" integrity="sha384-skAcpIdS7UcVUC05LJ9Dxay8AXcDYfBJqt1CJ85S/CFujBsIzCIv+l9liuYLaMQ/" crossorigin="anonymous"></script>
     -->
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBlenrzcXtkzBbkZ_9t-VcipIzf_SqgTZA&libraries=places"></script>
+    <script type="text/javascript">
+        google.maps.event.addDomListener(window, 'load', function () {
+            var places = new google.maps.places.Autocomplete(document.getElementById('txtPlaces'));
+            google.maps.event.addListener(places, 'place_changed', function () {
+            });
+        });
+    </script>
   </body>
 </html>
