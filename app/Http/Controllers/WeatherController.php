@@ -9,13 +9,14 @@ class WeatherController extends Controller
 {
     public function weather()
     {
-        $location='Kerala';
-        $api_key='364393651edc94c504c411a63eea11d6';
-        $response=Http::get("http://api.openweathermap.org/data/2.5/weather?q=$location&appid=$api_key");
-        //dump($response->json());
-        //dump($response->json(['main','temp']));
-        $temp=$response->json(['main','temp'])-273.15;
-        //echo $temp;
-        return view('weatherView');
+        return view('weatherlocation');
+    }
+    public function location(Request $request)
+    {
+        $location = $request->post('location');
+        $api_key = '364393651edc94c504c411a63eea11d6';
+        $response = Http::get("http://api.openweathermap.org/data/2.5/weather?q=$location&appid=$api_key");
+        $temp = $response->json(['main', 'temp']) - 273.15;
+        return view('weatherView',['temp'=>$temp]);
     }
 }
