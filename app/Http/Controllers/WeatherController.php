@@ -23,10 +23,17 @@ class WeatherController extends Controller
         $grnd_level=$response->json(['main', 'grnd_level']);
         $wind_speed=$response->json(['wind', 'speed']);
         if ($temp==null) {
-            return 'alert("please enter a vlaid place or check the spelling");';
+            return '<h5>please enter a vlaid place or check the spelling</h5>';
         }else {
             $temp=$temp-273.15;
-            return view('weatherView',['temp'=>$temp]);
+            return view('weatherView',[
+                'temp'=>$temp,
+                'pressure'=>$pressure,
+                'humidity'=>$humidity,
+                'sea_level'=>$sea_level,
+                'grnd_level'=>$grnd_level,
+                'wind_speed'=>$wind_speed,
+        ]);
         }
     }
 }
