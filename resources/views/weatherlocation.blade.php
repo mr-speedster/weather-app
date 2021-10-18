@@ -12,7 +12,7 @@
   </head>
   <body>
     <div>
-      <form action="/location" method="POST">
+      <form action="/" method="POST">
         @csrf
         <input id="txtPlaces" name="location" type="text" placeholder="enter the place"><br>
         <button class="btn btn-info">Check the status</button>
