@@ -15,4 +15,4 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/',[WeatherController::class,'weather']);
-Route::post('/location',[WeatherController::class,'location']);
+Route::post('/',[WeatherController::class,'location']);
