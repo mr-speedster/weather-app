@@ -16,7 +16,17 @@ class WeatherController extends Controller
         $location = $request->post('location');
         $api_key = '364393651edc94c504c411a63eea11d6';
         $response = Http::get("http://api.openweathermap.org/data/2.5/weather?q=$location&appid=$api_key");
-        $temp = $response->json(['main', 'temp']) - 273.15;
-        return view('weatherView',['temp'=>$temp]);
+        $temp = $response->json(['main', 'temp']);
+        $pressure = $response->json(['main', 'pressure']);
+        $humidity=$response->json(['main', 'humidity']);
+        $sea_level=$response->json(['main', 'sea_level']);
+        $grnd_level=$response->json(['main', 'grnd_level']);
+        $wind_speed=$response->json(['wind', 'speed']);
+        if ($temp==null) {
+            return 'alert("please enter a vlaid place or check the spelling");';
+        }else {
+            $temp=$temp-273.15;
+            return view('weatherView',['temp'=>$temp]);
+        }
     }
 }
