@@ -1,7 +1,7 @@
 body{
     margin: 0;
     padding: 0;
-    background:#47453e;
+    background:hsl(189, 95%, 50%);
     background-size: cover;
 }
 .rain{
@@ -53,4 +53,19 @@ body{
     100%{
         opacity: 0;
     }
+}
+/***********************************************************/
+.main {
+    display: grid;
+}
+.info{
+    width: 800px;
+    height: 400px;
+    background:yellow;
+    border-radius: 10px;
+    justify-self: center;
+    margin-top: 100px;
+}
+.info,.rain,.lightining{
+    grid-area: 1/1;
 }
