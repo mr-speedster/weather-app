@@ -1,8 +1,9 @@
 body{
     margin: 0;
     padding: 0;
-    background:hsl(189, 95%, 50%);
+    background:url("/public/assets/img/background-mountain.jpg");
     background-size: cover;
+    background-repeat: no-repeat;
 }
 .rain{
     height: 100vh;
@@ -60,12 +61,42 @@ body{
 }
 .info{
     width: 800px;
-    height: 400px;
-    background:yellow;
+    height:500px;
+    background:#00000077;
     border-radius: 10px;
     justify-self: center;
-    margin-top: 100px;
 }
 .info,.rain,.lightining{
     grid-area: 1/1;
+}
+h1{
+    font-weight: 700;
+    font-family: sans-serif;
+    text-align: center;
+    color: #fff;
+}
+h2{
+    font-weight: 700;
+    font-family: sans-serif;
+    color: #fff;
+}
+
+/***************************Responsive************************************/
+@media screen and (max-width:400px) {
+    .info,.rain,.lightining,.list,.data{
+        width: 100%;
+        font-size: 15px;
+    }
+    .header{
+        font-size: 15px;
+    }
+  }
+@media  screen and (max-width:600px) {
+    .info,.rain,.lightining,.list,.data{
+        width: 100%;
+        font-size: 20px;
+    }
+    .header{
+        font-size: 20px;
+    }
 }
