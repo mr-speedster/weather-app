@@ -1,9 +1,10 @@
 <?php
 
 namespace App\Http\Controllers;
-
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Http;
+use Illuminate\Support\Carbon;
+use DateTimeZone;
 
 class WeatherController extends Controller
 {
@@ -22,9 +23,17 @@ class WeatherController extends Controller
         $sea_level=$response->json(['main', 'sea_level']);
         $grnd_level=$response->json(['main', 'grnd_level']);
         $wind_speed=$response->json(['wind', 'speed']);
+        dd($response->json());
+        $time_zone=$response->json('timezone');
+        //dd($time_zone);
+        $date = Carbon::now();
+        //dd($date);
+        $tz = new DateTimeZone($time_zone);
+        //dd($tz);
         if ($temp==null) {
             return '<h5>please enter a vlaid place or check the spelling</h5>';
-        }else {
+        }
+        else {
             $temp=$temp-273.15;
             return view('weatherView',[
                 'temp'=>$temp,
