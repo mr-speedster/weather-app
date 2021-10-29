@@ -23,19 +23,25 @@ class WeatherController extends Controller
         $sea_level=$response->json(['main', 'sea_level']);
         $grnd_level=$response->json(['main', 'grnd_level']);
         $wind_speed=$response->json(['wind', 'speed']);
-        //dd($response->json());
-        //$time_zone=$response->json('timezone');
-        //dd($time_zone);
-        //$date = Carbon::now();
-        //dd($date);
-        //$tz = new DateTimeZone($time_zone);
-        //dd($tz);
+        $temp=$temp-273.15;
+        //dd($temp);
         if ($temp==null) {
             return '<h5>please enter a vlaid place or check the spelling</h5>';
         }
-        else {
-            $temp=$temp-273.15;
-            return view('weatherView',[
+        if ($temp>27){
+            return view('sun',[
+                'location'=>$location,
+                'temp'=>$temp,
+                'pressure'=>$pressure,
+                'humidity'=>$humidity,
+                'sea_level'=>$sea_level,
+                'grnd_level'=>$grnd_level,
+                'wind_speed'=>$wind_speed,
+        ]);
+        }
+        if ($temp<=27) {
+            return view('rain',[
+                'location'=>$location,
                 'temp'=>$temp,
                 'pressure'=>$pressure,
                 'humidity'=>$humidity,
