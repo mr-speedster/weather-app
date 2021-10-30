@@ -137,6 +137,7 @@ img{
     grid-area: 1/1;
 }
 h1{
+    margin: 20px;
     font-weight: 700;
     font-family: sans-serif;
     text-align: center;
@@ -144,6 +145,7 @@ h1{
 }
 h2{
     font-weight: 700;
+    margin: 10px;
     font-family: sans-serif;
     color: rgb(3, 3, 3);
 }
