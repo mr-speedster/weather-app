@@ -62,9 +62,9 @@ body{
 .info{
     width: 800px;
     height:500px;
-    background:#00000077;
+    background:#00000065;
     border-radius: 10px;
-    justify-self: center;
+    /*justify-self: center;*/
 }
 .info,.rain,.lightining{
     grid-area: 1/1;
@@ -73,12 +73,12 @@ h1{
     font-weight: 700;
     font-family: sans-serif;
     text-align: center;
-    color: #fff;
+    color:white;
 }
 h2{
     font-weight: 700;
     font-family: sans-serif;
-    color: #fff;
+    color: white;
 }
 
 /***************************Responsive************************************/
