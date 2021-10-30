@@ -11,7 +11,7 @@
         <div class="main">
             <div class="rain"></div>
             <div class="lightining"></div>
-            <div class="info">
+            <div style="justify-self: center" class="info">
                 <ul>
                     <h1 class="header">Today Weather Informations</h1>
                     <li class="list"><h2 class="data">Location : {{$location}}</h2></li>
