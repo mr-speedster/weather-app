@@ -16,3 +16,4 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/',[WeatherController::class,'weather']);
 Route::post('/',[WeatherController::class,'location']);
+Route::get('auto-complete-city', 'AutoCompleteController@index')->name('auto-complete-city');
