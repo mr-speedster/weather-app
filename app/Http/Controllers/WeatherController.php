@@ -23,7 +23,7 @@ class WeatherController extends Controller
         $sea_level=$response->json(['main', 'sea_level']);
         $grnd_level=$response->json(['main', 'grnd_level']);
         $wind_speed=$response->json(['wind', 'speed']);
-        dd($temp); 
+        //dd($temp); 
         if ($temp===null) {
             return '<h5>please enter a vlaid place or check the spelling</h5>';
         }
